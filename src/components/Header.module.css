@@ -60,6 +60,27 @@
     font-weight: 400;
 }
 
+/* Logo text highlight */
+.logoPlus {
+    color: var(--color-madera);
+    margin-left: 4px;
+}
+
+/* Admin gear icon (hidden link) */
+.adminBadge {
+    font-size: 1rem;
+    color: var(--color-beige-dark);
+    opacity: 0.4;
+    transition: opacity var(--trans-rapida);
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.adminBadge:hover {
+    opacity: 1;
+    color: var(--color-madera);
+}
+
 /* Nav links */
 .nav {
     display: flex;

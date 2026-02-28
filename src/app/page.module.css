@@ -143,104 +143,155 @@
 }
 
 /* Beneficios */
-.beneficiosGrid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--espacio-md);
+.beneficiosGr.main {
+    overflow-x: hidden;
 }
 
-.beneficioCard {
+/* =========== HERO NOSTÁLGICO =========== */
+.hero {
+    position: relative;
+    height: 95vh;
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: var(--espacio-lg) var(--espacio-md);
-    border-radius: var(--radio-lg);
-    background: var(--color-blanco);
-    border: 1px solid var(--color-beige);
-    transition: transform var(--trans-media), box-shadow var(--trans-media);
+    background-color: var(--color-abu-crema);
+    background-image:
+        linear-gradient(rgba(62, 59, 57, 0.45), rgba(62, 59, 57, 0.6)),
+        url('/images/hero-abu.jpg');
+    /* Imagen sugerida: Ventana empañada, lluvia de fondo o abuela tejiendo */
+    background-size: cover;
+    background-position: center;
+    color: var(--color-blanco);
+    padding: var(--espacio-lg);
 }
 
-.beneficioCard:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--sombra-md);
+.heroOverlay {
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(2px) saturate(1.2);
+    /* Efecto de vidrio empañado suave */
+    pointer-events: none;
 }
 
-.beneficioIcon {
-    font-size: 2.6rem;
+.heroContent {
+    position: relative;
+    z-index: 10;
+    max-width: 850px;
+}
+
+.abuBadge {
+    font-family: var(--font-detalle);
+    font-size: 2rem;
+    color: var(--color-abu-lino);
     display: block;
     margin-bottom: var(--espacio-sm);
 }
 
-.beneficioCard h3 {
-    font-size: 1rem;
+.heroTitle {
+    font-size: clamp(2.8rem, 8vw, 5rem);
+    line-height: 1.05;
+    margin-bottom: var(--espacio-md);
     font-weight: 700;
-    color: var(--color-texto);
-    margin-bottom: 8px;
+    letter-spacing: -0.02em;
 }
 
-.beneficioCard p {
-    font-size: 0.85rem;
-    color: var(--color-texto-light);
-    line-height: 1.55;
+.heroSubtitle {
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+    margin-bottom: var(--espacio-lg);
+    opacity: 0.95;
+    max-width: 650px;
+    margin-inline: auto;
+    line-height: 1.6;
 }
 
-/* =========== ESENCIA GRID =========== */
-.esenciaGrid {
+.heroCtas {
+    display: flex;
+    gap: var(--espacio-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* =========== HISTORIA GRID =========== */
+.historiaGrid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.2fr 0.8fr;
     gap: var(--espacio-xl);
     align-items: center;
+    padding: var(--espacio-xl) 0;
 }
 
-.esenciaInfo h2 {
-    font-family: var(--font-titulo);
-    font-size: 2.5rem;
+.historiaTexto h2 {
+    font-size: 3rem;
     margin-bottom: var(--espacio-md);
+    line-height: 1.1;
 }
 
-.esenciaInfo p {
-    font-size: 1.1rem;
-    color: var(--color-texto-light);
+.pEmotivo {
+    font-size: 1.3rem;
+    color: var(--color-abu-tierra);
+    font-weight: 500;
     margin-bottom: var(--espacio-md);
 }
 
 .textLink {
-    color: var(--color-tierra);
+    color: var(--color-abu-tierra);
     text-decoration: none;
     font-weight: 600;
     display: flex;
     align-items: center;
     gap: 0.5rem;
     transition: var(--trans-media);
+    margin-top: var(--espacio-md);
 }
 
 .textLink:hover {
     gap: 0.8rem;
 }
 
-.esenciaCards {
+.valoresCards {
     display: flex;
     flex-direction: column;
-    gap: var(--espacio-md);
+    gap: var(--espacio-lg);
 }
 
-.miniCard {
+.valorCard {
     background: var(--color-blanco);
-    padding: var(--espacio-md);
-    border-radius: var(--radio-md);
-    box-shadow: var(--sombra-sm);
-    border-left: 4px solid var(--color-arena);
+    padding: var(--espacio-lg);
+    border-radius: var(--radio-lg);
+    box-shadow: var(--sombra-md);
+    border-bottom: 4px solid var(--color-abu-arena);
+    transition: var(--trans-media);
 }
 
-.miniCard h3 {
-    font-size: 1.2rem;
+.valorCard:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-lg);
+}
+
+.valorIcon {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.valorCard h3 {
+    font-size: 1.4rem;
     margin-bottom: 0.5rem;
 }
 
-.miniCard p {
-    font-size: 0.95rem;
-    color: var(--color-texto-light);
+/* =========== TESOROS CON HISTORIA =========== */
+.bg-nostalgic {
+    background-color: var(--color-abu-lino);
 }
 
-/* Productos grid */
+.separadorNostalgico {
+    font-size: 2rem;
+    color: var(--color-abu-tierra);
+    margin-top: 1rem;
+}
+
 .productsGrid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -253,243 +304,76 @@
     text-align: center;
 }
 
-/* Ocasiones */
-.ocasionesGrid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--espacio-md);
+/* =========== INVITACIÓN BOX =========== */
+.invitacionSection {
+    padding: var(--espacio-2xl) 0;
 }
 
-.ocasionCard {
-    background: var(--color-blanco);
-    border: 1px solid var(--color-beige);
+.invitacionBox {
+    background: var(--color-abu-carbon);
+    color: var(--color-blanco);
+    padding: var(--espacio-2xl);
     border-radius: var(--radio-lg);
-    padding: var(--espacio-lg) var(--espacio-md);
-    display: flex;
-    flex-direction: column;
-    gap: var(--espacio-xs);
-    transition: all var(--trans-media);
     text-align: center;
-}
-
-.ocasionCard:hover {
-    background: var(--color-madera);
-    border-color: var(--color-madera);
-    transform: translateY(-4px);
+    max-width: 900px;
+    margin: 0 auto;
     box-shadow: var(--sombra-lg);
+    background-image: radial-gradient(circle at top right, rgba(166, 124, 82, 0.2), transparent);
 }
 
-.ocasionCard:hover h3,
-.ocasionCard:hover p {
-    color: rgba(249, 246, 240, 0.9);
-}
-
-.ocasionEmoji {
+.invitacionBox h2 {
+    color: var(--color-blanco);
     font-size: 2.5rem;
-    display: block;
-    margin-bottom: 6px;
+    margin-bottom: var(--espacio-md);
 }
 
-.ocasionCard h3 {
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--color-texto);
-    transition: color var(--trans-media);
+.invitacionBox p {
+    font-size: 1.2rem;
+    margin-bottom: var(--espacio-lg);
+    opacity: 0.85;
 }
 
-.ocasionCard p {
-    font-size: 0.83rem;
-    color: var(--color-texto-light);
-    line-height: 1.5;
-    transition: color var(--trans-media);
-    flex: 1;
-}
-
-/* Testimonios */
-.testimoniosGrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--espacio-md);
-}
-
-.testimonioCard {
-    background: var(--color-blanco);
-    border: 1px solid var(--color-beige);
-    border-radius: var(--radio-lg);
-    padding: var(--espacio-lg);
-    display: flex;
-    flex-direction: column;
-    gap: var(--espacio-sm);
-    box-shadow: var(--sombra-sm);
-}
-
-.estrellas {
-    font-size: 1.1rem;
-    letter-spacing: 2px;
-}
-
-.testimonioTexto {
-    font-size: 0.93rem;
-    color: var(--color-texto-light);
-    line-height: 1.7;
-    font-style: italic;
-    flex: 1;
-}
-
-.testimonioAutor {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    border-top: 1px solid var(--color-beige);
-    padding-top: var(--espacio-sm);
-}
-
-.testimonioAutor strong {
-    font-family: var(--font-titulo);
-    font-size: 0.92rem;
-    color: var(--color-texto);
-}
-
-.testimonioAutor span {
-    font-size: 0.78rem;
-    color: var(--color-texto-light);
-}
-
-/* Contacto */
-.contactSection {
-    background: var(--color-yeso);
-}
-
-.contactGrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--espacio-2xl);
-    align-items: start;
-}
-
-.contactInfo {
-    display: flex;
-    flex-direction: column;
-    gap: var(--espacio-md);
-}
-
-.contactInfo h2 {
-    font-size: clamp(1.6rem, 2.5vw, 2.2rem);
-}
-
-.contactInfo p {
-    color: var(--color-texto-light);
-    line-height: 1.7;
-}
-
-.contactData {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding: var(--espacio-md);
-    background: var(--color-beige);
-    border-radius: var(--radio-md);
-}
-
-.contactData p {
-    font-size: 0.9rem;
-    margin: 0;
-}
-
-.contactForm {
-    background: var(--color-blanco);
-    border: 1px solid var(--color-beige);
-    border-radius: var(--radio-lg);
-    padding: var(--espacio-lg);
-    display: flex;
-    flex-direction: column;
-    gap: var(--espacio-md);
-    box-shadow: var(--sombra-sm);
-}
-
-.formRow {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--espacio-sm);
-}
-
-/* RESPONSIVE */
-@media (max-width: 1100px) {
-    .beneficiosGrid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .ocasionesGrid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .productsGrid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .statsBar {
-        gap: var(--espacio-lg);
-    }
-}
-
-@media (max-width: 900px) {
-    .heroContent {
+/* =====================
+   RESPONSIVO FINAL
+   ===================== */
+@media (max-width: 992px) {
+    .historiaGrid {
         grid-template-columns: 1fr;
         text-align: center;
     }
 
-    .heroLeft {
-        align-items: center;
-    }
-
-    .heroBadge {
-        align-self: center;
+    .heroTitle {
+        font-size: 3rem;
     }
 
     .heroSubtitle {
-        max-width: 100%;
+        font-size: 1.1rem;
     }
 
-    .heroRight {
-        display: none;
+    .textLink {
+        justify-content: center;
     }
 
-    .contactGrid {
-        grid-template-columns: 1fr;
-    }
-
-    .testimoniosGrid {
-        grid-template-columns: 1fr;
+    .invitacionBox {
+        padding: var(--espacio-xl) var(--espacio-md);
     }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        padding: var(--espacio-2xl) var(--espacio-md);
+    }
+
+    .historiaTexto h2 {
+        font-size: 2.2rem;
+    }
+
     .productsGrid {
         grid-template-columns: 1fr;
     }
 
-    .beneficiosGrid {
-        grid-template-columns: 1fr;
-    }
-
-    .ocasionesGrid {
-        grid-template-columns: 1fr;
-    }
-
-    .statsBar {
-        flex-wrap: wrap;
-        gap: var(--espacio-md);
-    }
-
-    .statDiv {
-        display: none;
-    }
-
-    .formRow {
-        grid-template-columns: 1fr;
-    }
-
-    .heroCtas {
-        justify-content: center;
+    .invitacionBox h2 {
+        font-size: 1.8rem;
     }
 }

@@ -43,11 +43,11 @@ export default function MayoristasPage() {
                 {/* Hero oscuro */}
                 <section className={styles.hero}>
                     <div className={`container ${styles.heroContent}`}>
-                        <span className={`badge badge-acento`}>Consulta sin cargo</span>
-                        <h1>Pedidos Mayoristas<br />y Eventos</h1>
-                        <p>Souvenirs únicos en yeso artesanal para comuniones, cumpleaños, casamientos y eventos corporativos. Desde San Miguel para toda la zona norte.</p>
+                        <span className={`badge badge-acento`}>Consulta con la Abu</span>
+                        <h1>Llevá nuestra historia<br />a tu evento</h1>
+                        <p>Tesoros únicos en yeso artesanal para comuniones, bautismos y momentos especiales. Piezas moldeadas con amor que tus invitados guardarán para siempre.</p>
                         <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp btn-lg">
-                            Consultar por WhatsApp
+                            Consultar Pedido Especial
                         </a>
                     </div>
                 </section>

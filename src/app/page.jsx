@@ -7,7 +7,7 @@ import { products } from '@/data/data';
 import styles from './page.module.css';
 
 const WA_NUMBER = '5491100000000';
-const WA_MSG = encodeURIComponent('Hola! Me gustaría saber más sobre los talleres y las piezas del catálogo.');
+const WA_MSG = encodeURIComponent('Hola! Me conmovió la historia de Abu Creaciones y me gustaría saber más.');
 const WA_URL = `https://wa.me/${WA_NUMBER}?text=${WA_MSG}`;
 
 export default function Home() {
@@ -17,52 +17,58 @@ export default function Home() {
         <>
             <Header />
             <main className={styles.main}>
-                {/* =========== HERO: Taller Acogedor =========== */}
+                {/* =========== HERO: La Mañana de Domingo =========== */}
                 <section className={`${styles.hero} animate-fadein`}>
+                    <div className={styles.heroOverlay} />
                     <div className={styles.heroContent}>
-                        <h1 className={styles.heroTitle}>Arte que transforma tu hogar con calidez</h1>
+                        <span className={styles.abuBadge}>Desde el corazón de la abuela</span>
+                        <h1 className={styles.heroTitle}>Donde vive el alma de tu hogar</h1>
                         <p className={styles.heroSubtitle}>
-                            Descubre piezas de yeso moldeadas a mano con dedicación y el toque rústico de nuestro taller en San Miguel. Cada figura cuenta una historia única.
+                            ¿Te acuerdas de ese olor a pan recién horneado y la salsa cociéndose lento en una mañana de domingo lluviosa?
+                            Atrás de esos vidrios empañados, nacen nuestras creaciones. Piezas de yeso que guardan el calor de un abrazo.
                         </p>
                         <div className={styles.heroCtas}>
-                            <Link href="/catalogo" className="btn btn-primary btn-lg">Explorar Catálogo</Link>
-                            <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-lg">Hablar con el Taller</a>
+                            <Link href="/catalogo" className="btn btn-primary btn-lg">Descubrir Tesoros</Link>
+                            <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-lg">Ser parte de nuestra historia</a>
                         </div>
                     </div>
                 </section>
 
-                {/* =========== ESENCIA TALLERISTA =========== */}
+                {/* =========== HISTORIA Y EMPATÍA =========== */}
                 <section className="section-padding container animate-fadein" style={{ animationDelay: '0.2s' }}>
-                    <div className={styles.esenciaGrid}>
-                        <div className={styles.esenciaInfo}>
-                            <h2 className={styles.sectionTitle}>Nuestra Esencia Tallerista</h2>
-                            <p>Materiales naturales y procesos artesanales que inspiran serenidad. Creemos en la belleza de lo hecho con las manos y el valor de lo imperfecto.</p>
-                            <Link href="/nosotros" className={styles.textLink}>Ver galería completa <span className={styles.arrow}>→</span></Link>
+                    <div className={styles.historiaGrid}>
+                        <div className={styles.historiaTexto}>
+                            <h2 className={styles.sectionTitle}>Cada pieza es una caricia</h2>
+                            <p className={styles.pEmotivo}>
+                                En **Abu Creaciones**, no fabricamos objetos, rescatamos valores. Cada figura es moldeada a mano, pensando en la mesa compartida, en el rincón de lectura y en la paz que solo se siente en casa.
+                            </p>
+                            <p>
+                                Al elegir una de nuestras creaciones, nos estás ayudando a mantener viva una tradición familiar, un legado de paciencia y amor que se transmite en cada pincelada.
+                            </p>
+                            <Link href="/nosotros" className={styles.textLink}>Conocé a la Abu <span className={styles.arrow}>→</span></Link>
                         </div>
-                        <div className={styles.esenciaCards}>
-                            <div className={styles.miniCard}>
-                                <h3>Acabados Orgánicos</h3>
-                                <p>Inspirados en los matices de la tierra y la piedra natural.</p>
+                        <div className={styles.valoresCards}>
+                            <div className={styles.valorCard}>
+                                <span className={styles.valorIcon}>🥖</span>
+                                <h3>Hecho sin prisa</h3>
+                                <p>Como el pan que espera su tiempo, nuestras piezas se secan al aire de San Miguel.</p>
                             </div>
-                            <div className={styles.miniCard}>
-                                <h3>Texturas Naturales</h3>
-                                <p>Combinamos yeso con fibras de papel y lino reciclado.</p>
-                            </div>
-                            <div className={styles.miniCard}>
-                                <h3>Diseño Atemporal</h3>
-                                <p>Piezas diseñadas para brindar calma a cualquier espacio.</p>
+                            <div className={styles.valorCard}>
+                                <span className={styles.valorIcon}>👵</span>
+                                <h3>Amor de Abuela</h3>
+                                <p>Dedicación total en cada detalle, buscando la perfección en lo artesanal.</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* =========== CATÁLOGO DESTACADO =========== */}
-                <section className={`section-padding bg-textura animate-fadein`} style={{ animationDelay: '0.4s' }}>
+                {/* =========== TESOROS DESTACADOS =========== */}
+                <section className={`section-padding bg-nostalgic animate-fadein`} style={{ animationDelay: '0.4s' }}>
                     <div className="container">
-                        <div className="section-header">
-                            <h2 className={styles.sectionTitle}>Catálogo de Piezas</h2>
-                            <p>Figuras artesanales creadas con dedicación en nuestro taller de San Miguel.</p>
-                            <span className="divider" />
+                        <div className="section-header text-center">
+                            <h2 className={styles.sectionTitle}>Tesoros con Historia</h2>
+                            <p className={styles.pSubtitle}>Pedacitos de hogar que esperan por vos.</p>
+                            <div className={styles.separadorNostalgico}>✦</div>
                         </div>
                         <div className={styles.productsGrid}>
                             {featured.map((p) => (
@@ -70,33 +76,19 @@ export default function Home() {
                             ))}
                         </div>
                         <div className={styles.verMasWrap}>
-                            <Link href="/catalogo" className="btn btn-primary">Ver catálogo completo</Link>
+                            <Link href="/catalogo" className="btn btn-secondary">Ver toda la colección</Link>
                         </div>
                     </div>
                 </section>
 
-                {/* =========== TEASER TALLERES =========== */}
-                <section className={`${styles.talleresSection} section-padding animate-fadein`} style={{ animationDelay: '0.6s' }}>
+                {/* =========== INVITACIÓN AL TALLER =========== */}
+                <section className={`${styles.invitacionSection} section-padding animate-fadein`} style={{ animationDelay: '0.6s' }}>
                     <div className="container">
-                        <div className={styles.talleresContent}>
-                            <h2>¿Quieres aprender el arte del yeso?</h2>
-                            <p>Únete a nuestros talleres presenciales en un ambiente acogedor y creativo en el corazón de San Miguel. Aprende desde el moldeado hasta el acabado final.</p>
-                            <Link href="/talleres" className="btn btn-primary btn-lg">Ver Próximos Talleres</Link>
+                        <div className={styles.invitacionBox}>
+                            <h2>¿Nos ayudás a seguir creando?</h2>
+                            <p>Tu apoyo es lo que nos impulsa a seguir horneando sueños. Cada vez que llevás una pieza, te llevás un pedacito de nuestro domingo familiar.</p>
+                            <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">Contactanos y conocenos</a>
                         </div>
-                    </div>
-                </section>
-
-                {/* =========== BOLETÍN CREATIVO =========== */}
-                <section className="section-padding container animate-fadein" style={{ animationDelay: '0.8s' }}>
-                    <div className={styles.boletinCard}>
-                        <div className={styles.boletinText}>
-                            <h3>Boletín Creativo</h3>
-                            <p>Recibe novedades de nuevas colecciones y fechas de próximos talleres directamente en tu correo.</p>
-                        </div>
-                        <form className={styles.boletinForm} onSubmit={(e) => e.preventDefault()}>
-                            <input type="email" placeholder="tu@email.com" required />
-                            <button type="submit" className="btn btn-primary">Suscribirse</button>
-                        </form>
                     </div>
                 </section>
             </main>

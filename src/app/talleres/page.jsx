@@ -19,8 +19,8 @@ export default function Talleres() {
                 <section className="section-padding container animate-fadein" style={{ animationDelay: '0.2s' }}>
                     <div className={styles.grid}>
                         <div className={styles.info}>
-                            <h2>El Taller San Miguel</h2>
-                            <p>Ubicados en el corazón de San Miguel, nuestro taller es un espacio abierto a la experimentación y el aprendizaje. No importa si nunca tocaste el yeso o si ya tenés experiencia; aquí celebramos la belleza de lo imperfecto.</p>
+                            <h2>El Taller de la Abu</h2>
+                            <p>Ubicados en el corazón de San Miguel, nuestro taller es un espacio donde el tiempo se detiene. Aquí, entre el olor a yeso fresco y charlas compartidas, te invitamos a crear tus propios tesoros.</p>
                             <div className={styles.features}>
                                 <div className={styles.feature}>
                                     <h3>Ambiente Acogedor</h3>

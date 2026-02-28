@@ -1,36 +1,57 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&family=Dancing+Script:wght@400;700&display=swap');
 
 /* =====================
    VARIABLES DE DISEÑO
    ===================== */
 :root {
-  /* Paleta Taller Acogedor (Rústica/Orgánica) */
-  --color-yeso: #F9F7F2;
-  /* Blanco roto con tinte cálido */
-  --color-crema: #F2EBE1;
-  --color-beige: #E6DCD0;
-  --color-arena: #D1BFA7;
-  --color-arcilla: #A67C52;
-  /* Antes madera */
-  --color-tierra: #7D5A3C;
-  --color-lino: #B8A28C;
-  --color-texto: #332D28;
-  --color-texto-light: #7A6E63;
+  /* =====================
+     PALETA ABU CREACIONES
+     Color base Stitch: #7b563d (madera/acento)
+     Roundness: ROUND_EIGHT
+     Font: Inter
+  ===================== */
+
+  /* Fondos y superficies */
+  --color-abu-crema: #FDF9F3;
+  /* Crema antiguo — Fondo principal */
+  --color-abu-lino: #F2EBE1;
+  /* Lino natural */
+  --color-abu-arena: #DBCFBF;
+  /* Arena / borde suave */
+  --color-fondo: var(--color-abu-crema);
+
+  /* Madera / Acento principal — Stitch #7b563d */
+  --color-madera: #7b563d;
+  --color-madera-dark: #5e3f2b;
+  --color-abu-tierra: #7b563d;
+  /* alias */
+  --color-acento: var(--color-madera);
+
+  /* Textos */
+  --color-abu-carbon: #3E3B39;
+  /* Texto principal */
+  --color-abu-sepia: #7A6E63;
+  /* Texto secundario */
+  --color-texto: var(--color-abu-carbon);
+  --color-texto-light: var(--color-abu-sepia);
+
+  /* Auxiliares */
+  --color-abu-niebla: #98A6AD;
+  /* Azul lluvia */
+  --color-beige: #F5F0EB;
+  --color-beige-dark: #C6B9AB;
+  --color-arena: var(--color-abu-arena);
+  --color-yeso: var(--color-abu-crema);
   --color-blanco: #FFFFFF;
   --color-whatsapp: #25D366;
   --color-whatsapp-dark: #1DA851;
 
-  /* Categorías Actualizadas */
-  --color-religioso: #7D5A3C;
-  --color-decoracion: #A67C52;
-  --color-macetas: #8B9E6A;
-  --color-herramientas: #6B5748;
-
   /* Tipografía */
-  --font-titulo: 'Outfit', sans-serif;
+  --font-titulo: 'Playfair Display', serif;
   --font-cuerpo: 'Inter', sans-serif;
+  --font-detalle: 'Dancing Script', cursive;
 
-  /* Espaciado y Bordes */
+  /* Espaciado */
   --espacio-xs: 0.5rem;
   --espacio-sm: 1rem;
   --espacio-md: 1.5rem;
@@ -38,32 +59,46 @@
   --espacio-xl: 4rem;
   --espacio-2xl: 6rem;
 
+  /* Bordes — Stitch ROUND_EIGHT */
   --radio-sm: 4px;
-  /* Bordes un poco más rectos/artesanales */
   --radio-md: 8px;
   --radio-lg: 16px;
   --radio-full: 9999px;
 
-  /* Sombras más sutiles y orgánicas */
-  --sombra-sm: 0 2px 10px rgba(51, 45, 40, 0.05);
-  --sombra-md: 0 4px 20px rgba(51, 45, 40, 0.08);
-  --sombra-lg: 0 10px 40px rgba(51, 45, 40, 0.12);
+  /* Sombras cálidas */
+  --sombra-sm: 0 2px 15px rgba(62, 59, 57, 0.04);
+  --sombra-md: 0 8px 30px rgba(62, 59, 57, 0.06);
+  --sombra-lg: 0 15px 50px rgba(62, 59, 57, 0.10);
 
-  --trans-media: 0.3s ease;
-  --max-width: 1280px;
+  /* Transiciones */
+  --trans-rapida: 0.2s ease;
+  --trans-media: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --max-width: 1200px;
 }
 
 /* =====================
-   RESET Y BASE
+   RESET Y BASE HOGAREÑA
    ===================== */
 body {
   font-family: var(--font-cuerpo);
-  background-color: var(--color-yeso);
-  background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
-  /* Textura sutil de papel */
+  background-color: var(--color-fondo);
+  background-image:
+    url("https://www.transparenttextures.com/patterns/natural-paper.png"),
+    radial-gradient(circle at top right, rgba(152, 166, 173, 0.05), transparent),
+    radial-gradient(circle at bottom left, rgba(166, 124, 82, 0.05), transparent);
   color: var(--color-texto);
-  line-height: 1.6;
+  line-height: 1.7;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-titulo);
+  color: var(--color-abu-carbon);
+  font-weight: 700;
 }
 
 h1,
@@ -186,7 +221,7 @@ ol {
   background: var(--color-madera-dark);
   border-color: var(--color-madera-dark);
   transform: translateY(-2px);
-  box-shadow: var(--sombra-md);
+  box-shadow: 0 6px 20px rgba(123, 86, 61, 0.30);
 }
 
 .btn-outline {
@@ -273,8 +308,14 @@ ol {
 .bg-textura {
   background-color: var(--color-beige);
   background-image:
-    radial-gradient(circle at 25% 25%, rgba(201, 168, 124, 0.06) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(125, 90, 60, 0.05) 0%, transparent 50%);
+    radial-gradient(circle at 25% 25%, rgba(123, 86, 61, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(123, 86, 61, 0.04) 0%, transparent 50%);
+}
+
+.bg-nostalgic {
+  background-color: var(--color-abu-lino);
+  background-image:
+    radial-gradient(circle at 30% 30%, rgba(123, 86, 61, 0.05) 0%, transparent 60%);
 }
 
 .bg-oscuro {

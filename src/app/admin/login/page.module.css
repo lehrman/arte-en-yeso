@@ -1,0 +1,172 @@
+.page {
+    min-height: 100vh;
+    background-color: #F5F0EB;
+    background-image:
+        radial-gradient(circle at 20% 20%, rgba(123, 86, 61, 0.06) 0%, transparent 60%),
+        radial-gradient(circle at 80% 80%, rgba(152, 166, 173, 0.05) 0%, transparent 60%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 40px rgba(62, 59, 57, 0.10);
+    width: 100%;
+    max-width: 440px;
+    overflow: hidden;
+}
+
+.cardHeader {
+    background: #7b563d;
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brandLink {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.brandIcon {
+    font-size: 1.4rem;
+}
+
+.brandName {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.02em;
+}
+
+.siteLink {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.siteLink:hover {
+    color: #fff;
+}
+
+.cardBody {
+    padding: 2.5rem 2rem;
+}
+
+.title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #3E3B39;
+    margin-bottom: 0.4rem;
+    line-height: 1.25;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: #7A6E63;
+    margin-bottom: 1.75rem;
+}
+
+.errorMsg {
+    background: #fef2f2;
+    border: 1px solid #fca5a5;
+    color: #b91c1c;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.88rem;
+    margin-bottom: 1.25rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.formGroup label {
+    font-size: 0.83rem;
+    font-weight: 600;
+    color: #3E3B39;
+    letter-spacing: 0.01em;
+}
+
+.formGroup input {
+    padding: 11px 14px;
+    border: 1.5px solid #C6B9AB;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+    background: #fff;
+    color: #3E3B39;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+.formGroup input:focus {
+    border-color: #7b563d;
+    box-shadow: 0 0 0 3px rgba(123, 86, 61, 0.12);
+}
+
+.btnLogin {
+    margin-top: 0.5rem;
+    padding: 13px;
+    background: #7b563d;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+}
+
+.btnLogin:hover {
+    background: #5e3f2b;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(123, 86, 61, 0.30);
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.25rem;
+}
+
+.textLink {
+    font-size: 0.82rem;
+    color: #7b563d;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.textLink:hover {
+    opacity: 0.75;
+}
+
+.cardFooter {
+    padding: 1rem 2rem;
+    border-top: 1px solid #F5F0EB;
+    text-align: center;
+}
+
+.cardFooter p {
+    font-size: 0.75rem;
+    color: #C6B9AB;
+}

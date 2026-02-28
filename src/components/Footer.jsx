@@ -11,15 +11,9 @@ export default function Footer() {
             <div className={`container ${styles.inner}`}>
                 {/* Columna 1: Logo e info */}
                 <div className={styles.col}>
-                    <div className={styles.logo}>
-                        <span className={styles.logoIcon}>✦</span>
-                        <span>
-                            <strong>Arte en Yeso</strong>
-                            <small>San Miguel, Buenos Aires</small>
-                        </span>
-                    </div>
-                    <p className={styles.tagline}>
-                        Figuras artesanales en yeso hechas a mano con amor desde San Miguel. Producción propia, personalizaciones y envíos en zona norte del GBA.
+                    <h3 className={styles.footerLogo}>ABU <span className={styles.logoPlus}>CREACIONES</span></h3>
+                    <p className={styles.footerDesc}>
+                        Rescatando el amor en cada rincón. Piezas hechas a mano con la nostalgia de los domingos en familia y el calor del hogar.
                     </p>
                     {/* Redes sociales */}
                     <div className={styles.redes}>

@@ -1,9 +1,8 @@
 import './globals.css';
 
 export const metadata = {
-    title: 'Arte en Yeso San Miguel | Figuras Artesanales en Yeso',
-    description:
-        'Figuras religiosas, souvenirs y decoración artesanal en yeso hechas a mano en San Miguel, Provincia de Buenos Aires. Comuniones, cumpleaños, Navidad y más. Envíos zona norte GBA.',
+    title: "ABU CREACIONES — El alma de tu hogar",
+    description: "Piezas de yeso hechas a mano con el amor de una abuela. Rescatamos la nostalgia de los domingos en familia y la calidez del hogar en cada creación.",
     keywords:
         'figuras en yeso San Miguel, souvenirs religiosos personalizados, kits para pintar yeso, decoración artesanal en yeso Argentina, figuras de yeso GBA',
     openGraph: {

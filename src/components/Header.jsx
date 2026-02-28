@@ -7,9 +7,10 @@ import styles from './Header.module.css';
 const navLinks = [
     { href: '/', label: 'Inicio' },
     { href: '/catalogo', label: 'Catálogo' },
+    { href: '/talleres', label: 'Talleres' },
     { href: '/nosotros', label: 'Sobre Nosotros' },
     { href: '/mayoristas', label: 'Mayoristas' },
-    { href: '/blog', label: 'Blog' },
+    { href: '/contacto', label: 'Contacto' },
 ];
 
 const WA_NUMBER = '5491100000000';
@@ -34,13 +35,13 @@ export default function Header() {
         <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
             <div className={`container ${styles.inner}`}>
                 {/* Logo */}
-                <Link href="/" className={styles.logo}>
-                    <span className={styles.logoIcon}>✦</span>
-                    <span>
-                        <strong>Arte en Yeso</strong>
-                        <small>San Miguel, Buenos Aires</small>
-                    </span>
-                </Link>
+                <div className={styles.logoContainer}>
+                    <Link href="/" className={styles.logo}>
+                        ABU <span className={styles.logoPlus}>CREACIONES</span>
+                    </Link>
+                </div>
+                {/* Acceso admin oculto */}
+                <Link href="/admin/login" className={styles.adminBadge} title="Panel de Administración">⚙</Link>
 
                 {/* Navegación desktop */}
                 <nav className={styles.nav}>
