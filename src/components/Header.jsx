@@ -37,6 +37,7 @@ export default function Header() {
                 {/* Logo */}
                 <div className={styles.logoContainer}>
                     <Link href="/" className={styles.logo}>
+                        <img src="/images/logo-abu.png" alt="Abu Creaciones" className={styles.logoImg} />
                         ABU <span className={styles.logoPlus}>CREACIONES</span>
                     </Link>
                 </div>
