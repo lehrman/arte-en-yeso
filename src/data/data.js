@@ -3,6 +3,7 @@ export const products = [
     {
         id: 1,
         name: "El Ángel que me Cuida",
+        slug: "angel-guardian",
         category: "religioso",
         price: 9500,
         stock: "Disponible",
@@ -15,6 +16,7 @@ export const products = [
     {
         id: 2,
         name: "Maceta de los Domingos",
+        slug: "maceta-domingos",
         category: "hogar",
         price: 3400,
         stock: "Pocas unidades",

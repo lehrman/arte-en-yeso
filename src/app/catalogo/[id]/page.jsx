@@ -21,7 +21,9 @@ export async function generateMetadata({ params }) {
 }
 
 export async function generateStaticParams() {
-    return products.map((p) => ({ id: p.slug }));
+    return products
+        .map((p) => ({ id: p.slug ?? String(p.id) }))
+        .filter((p) => p.id);
 }
 
 export default function ProductoPage({ params }) {
