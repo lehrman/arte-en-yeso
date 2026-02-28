@@ -61,7 +61,7 @@ export default function Talleres() {
                             </div>
                         </div>
                         <div style={{ marginTop: '3rem' }}>
-                            <Link href="https://wa.me/5491100000000" className="btn btn-primary btn-lg">Reservar mi lugar via WhatsApp</Link>
+                            <Link href={`https://wa.me/${WA_NUMBER}`} className="btn btn-primary btn-lg">Reservar mi lugar via WhatsApp</Link>
                         </div>
                     </div>
                 </section>

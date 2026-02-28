@@ -1,7 +1,7 @@
 'use client';
 import styles from './WhatsAppFloat.module.css';
 
-const WA_NUMBER = '5491100000000';
+const WA_NUMBER = '5491162996903';
 const WA_MSG = encodeURIComponent('Hola! Vi su sitio web y quisiera consultar sobre sus figuras de yeso artesanales.');
 const WA_URL = `https://wa.me/${WA_NUMBER}?text=${WA_MSG}`;
 

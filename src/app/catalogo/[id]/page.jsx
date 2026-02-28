@@ -81,11 +81,11 @@ export default function ProductoPage() {
     const waMsg = encodeURIComponent(
         `Hola! Estoy interesado/a en "${product.name}". ¿Pueden brindarme más información y precio?`
     );
-    const waUrl = `https://wa.me/5491100000000?text=${waMsg}`;
+    const waUrl = `https://wa.me/5491162996903?text=${waMsg}`;
     const waPedido = encodeURIComponent(
         `Hola! Quisiera hacer un pedido personalizado de "${product.name}". ¿Podemos coordinar los detalles?`
     );
-    const waUrlPedido = `https://wa.me/5491100000000?text=${waPedido}`;
+    const waUrlPedido = `https://wa.me/5491162996903?text=${waPedido}`;
 
     return (
         <>

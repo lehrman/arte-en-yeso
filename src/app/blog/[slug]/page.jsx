@@ -72,7 +72,8 @@ export default async function ArticuloBlogPage({ params }) {
     if (!post) notFound();
 
     const otrosPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 3);
-    const WA_URL = `https://wa.me/5491100000000?text=${encodeURIComponent(`Hola! Leí el artículo "${post.title}" y quisiera consultar sobre sus productos.`)}`;
+    const WA_NUMBER = '5491162996903';
+    const WA_URL = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(`Hola! Leí el artículo "${post.title}" y quisiera consultar sobre sus productos.`)}`;
 
     return (
         <>

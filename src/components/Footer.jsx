@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import styles from './Footer.module.css';
 
-const WA_NUMBER = '5491100000000';
+const WA_NUMBER = '5491162996903';
 const WA_MSG = encodeURIComponent('Hola! Quiero consultar sobre sus figuras de yeso artesanales.');
-const WA_URL = `https://wa.me/${WA_NUMBER}?text=${WA_MSG}`;
+const WA_URL = `https://wa.me/${WA_NUMBER}`;
+const ADDRESS = 'Calle Irigoin S/N, San Miguel';
 
 export default function Footer() {
     return (

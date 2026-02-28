@@ -22,7 +22,7 @@ const valores = [
 ];
 
 export default function NosotrosPage() {
-    const WA_URL = 'https://wa.me/5491100000000?text=' + encodeURIComponent('Hola! Me emocionó mucho su historia y me gustaría conocer más sobre Abu Creaciones.');
+    const WA_URL = 'https://wa.me/5491162996903?text=' + encodeURIComponent('Hola! Me emocionó mucho su historia y me gustaría conocer más sobre Abu Creaciones.');
 
     return (
         <>

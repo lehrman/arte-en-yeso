@@ -17,11 +17,13 @@ const CATEGORY_ICONS = {
     hogar: '🏠',
 };
 
+const WA_NUMBER = '5491162996903';
+
 export default function ProductCard({ product }) {
     const waMsg = encodeURIComponent(
         `Hola! Estoy interesado/a en "${product.name}" — ¿Podrían darme más información?`
     );
-    const waUrl = `https://wa.me/5491100000000?text=${waMsg}`;
+    const waUrl = `https://wa.me/${WA_NUMBER}?text=${waMsg}`;
 
     const stockLabel = product.stock === 'disponible' ? 'En Stock' : 'Últimas unidades';
     const stockClass = product.stock === 'disponible' ? styles.stockOk : styles.stockWarn;

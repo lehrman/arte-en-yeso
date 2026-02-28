@@ -5,7 +5,7 @@ import FeaturedProducts from '@/components/FeaturedProducts';
 import Link from 'next/link';
 import styles from './page.module.css';
 
-const WA_NUMBER = '5491100000000';
+const WA_NUMBER = '5491162996903';
 const WA_MSG = encodeURIComponent('Hola! Me conmovió la historia de Abu Creaciones y me gustaría saber más.');
 const WA_URL = `https://wa.me/${WA_NUMBER}?text=${WA_MSG}`;
 

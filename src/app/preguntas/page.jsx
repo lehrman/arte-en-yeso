@@ -36,7 +36,7 @@ export default function FAQ() {
                     </div>
                     <div className={styles.cta}>
                         <p>¿Aún tenés dudas específicas?</p>
-                        <a href="https://wa.me/5491100000000" className="btn btn-primary">Consultar por WhatsApp</a>
+                        <a href={`https://wa.me/${WA_NUMBER}`} className="btn btn-primary">Consultar por WhatsApp</a>
                     </div>
                 </section>
             </main>
