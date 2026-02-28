@@ -1,0 +1,165 @@
+.main {
+    padding-top: 72px;
+}
+
+/* Hero */
+.hero {
+    padding: var(--espacio-2xl) 0 var(--espacio-xl);
+    background: linear-gradient(135deg, var(--color-beige) 0%, var(--color-yeso) 70%);
+    text-align: center;
+}
+
+.hero .section-tag {
+    color: var(--color-arena);
+    margin-bottom: 8px;
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--color-texto);
+    margin-bottom: 12px;
+}
+
+.hero p {
+    font-size: 1.05rem;
+    color: var(--color-texto-light);
+}
+
+/* Filtros */
+.filtrosSection {
+    background: var(--color-blanco);
+    border-bottom: 1px solid var(--color-beige);
+    position: sticky;
+    top: 72px;
+    z-index: 50;
+}
+
+.filtrosWrap {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: var(--espacio-sm) 0;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.filtrosWrap::-webkit-scrollbar {
+    display: none;
+}
+
+.filtroBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 20px;
+    border-radius: var(--radio-full);
+    font-size: 0.9rem;
+    font-weight: 600;
+    background: var(--color-yeso);
+    color: var(--color-texto);
+    border: 1.5px solid var(--color-beige-dark);
+    cursor: pointer;
+    transition: all var(--trans-rapida);
+    white-space: nowrap;
+}
+
+.filtroBtn:hover {
+    background: var(--color-beige);
+    border-color: var(--color-madera);
+    color: var(--color-madera);
+}
+
+.filtroBtn.active {
+    background: var(--color-madera);
+    border-color: var(--color-madera);
+    color: var(--color-blanco);
+}
+
+.countBadge {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: var(--radio-full);
+    padding: 1px 7px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+/* Grid */
+.gridSection {
+    padding: var(--espacio-xl) 0 var(--espacio-2xl);
+}
+
+.resultCount {
+    font-size: 0.85rem;
+    color: var(--color-texto-light);
+    margin-bottom: var(--espacio-md);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--espacio-md);
+}
+
+.empty {
+    text-align: center;
+    padding: var(--espacio-2xl);
+    color: var(--color-texto-light);
+}
+
+.empty span {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: var(--espacio-sm);
+}
+
+/* Banner mayoristas */
+.mayoristaBanner {
+    background: var(--color-madera);
+    padding: var(--espacio-xl) 0;
+}
+
+.bannerInner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--espacio-lg);
+}
+
+.bannerInner h2 {
+    font-size: 1.6rem;
+    color: var(--color-yeso);
+    margin-bottom: 8px;
+}
+
+.bannerInner p {
+    color: rgba(249, 246, 240, 0.75);
+    font-size: 0.95rem;
+}
+
+@media (max-width: 1100px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bannerInner {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,217 @@
+.main {
+    padding-top: 72px;
+}
+
+/* Hero oscuro */
+.hero {
+    background: var(--color-madera-dark);
+    background-image: radial-gradient(ellipse at 20% 50%, rgba(201, 168, 124, 0.15) 0%, transparent 60%);
+    padding: var(--espacio-2xl) 0;
+    text-align: center;
+}
+
+.heroContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--espacio-md);
+}
+
+.heroContent h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    color: var(--color-yeso);
+    line-height: 1.15;
+}
+
+.heroContent p {
+    font-size: 1.1rem;
+    color: rgba(249, 246, 240, 0.75);
+    max-width: 560px;
+}
+
+/* Propuestas */
+.propuestasGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--espacio-md);
+}
+
+.propuCard {
+    background: var(--color-blanco);
+    border: 1px solid var(--color-beige);
+    border-radius: var(--radio-lg);
+    padding: var(--espacio-lg) var(--espacio-md);
+    text-align: center;
+    transition: all var(--trans-media);
+}
+
+.propuCard:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--sombra-md);
+}
+
+.propuIcon {
+    font-size: 2.2rem;
+    display: block;
+    margin-bottom: var(--espacio-sm);
+}
+
+.propuCard h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.propuCard p {
+    font-size: 0.82rem;
+    color: var(--color-texto-light);
+    line-height: 1.5;
+}
+
+/* Formulario + Condiciones */
+.formGrid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: var(--espacio-xl);
+    align-items: start;
+}
+
+.formCard {
+    background: var(--color-blanco);
+    border-radius: var(--radio-lg);
+    padding: var(--espacio-xl);
+    box-shadow: var(--sombra-md);
+}
+
+.formCard h2 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.formCard>p {
+    font-size: 0.9rem;
+    color: var(--color-texto-light);
+    margin-bottom: var(--espacio-lg);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-md);
+}
+
+.formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espacio-sm);
+}
+
+/* Condiciones */
+.condiciones {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-md);
+}
+
+.condiciones h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.condList {
+    background: var(--color-blanco);
+    border-radius: var(--radio-lg);
+    overflow: hidden;
+    border: 1px solid var(--color-beige);
+}
+
+.condItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--color-beige);
+    font-size: 0.88rem;
+}
+
+.condItem:last-child {
+    border-bottom: none;
+}
+
+.condLabel {
+    color: var(--color-texto-light);
+}
+
+.condValue {
+    font-weight: 700;
+    color: var(--color-madera);
+}
+
+.waCard {
+    background: var(--color-madera);
+    border-radius: var(--radio-lg);
+    padding: var(--espacio-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-sm);
+}
+
+.waCard h4 {
+    color: var(--color-yeso);
+    font-size: 1rem;
+}
+
+.waCard p {
+    color: rgba(249, 246, 240, 0.75);
+    font-size: 0.85rem;
+}
+
+.testimonioCard {
+    background: var(--color-blanco);
+    border: 1px solid var(--color-beige);
+    border-radius: var(--radio-md);
+    padding: var(--espacio-md);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.estrellas {
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+.testimonioCard p {
+    font-size: 0.85rem;
+    color: var(--color-texto-light);
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.testimonioCard strong {
+    font-size: 0.82rem;
+    color: var(--color-madera);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .propuestasGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .formGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .propuestasGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .formRow {
+        grid-template-columns: 1fr;
+    }
+}

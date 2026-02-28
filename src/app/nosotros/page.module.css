@@ -1,0 +1,250 @@
+.main {
+    padding-top: 72px;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(160deg, var(--color-beige-dark) 0%, var(--color-beige) 50%, var(--color-yeso) 100%);
+    padding: var(--espacio-2xl) 0 var(--espacio-xl);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.heroBg {
+    position: absolute;
+    inset: 0;
+}
+
+.heroDecoL,
+.heroDecoR {
+    position: absolute;
+    font-size: 6rem;
+    opacity: 0.08;
+}
+
+.heroDecoL {
+    left: 5%;
+    top: 20%;
+}
+
+.heroDecoR {
+    right: 8%;
+    bottom: 10%;
+    font-size: 3rem;
+}
+
+.heroContent {
+    position: relative;
+}
+
+.heroContent .section-tag {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-arena);
+    margin-bottom: 12px;
+}
+
+.heroContent h1 {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    color: var(--color-texto);
+    margin-bottom: 16px;
+}
+
+.heroContent p {
+    font-size: 1.05rem;
+    color: var(--color-texto-light);
+}
+
+/* Historia */
+.historiaGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espacio-2xl);
+    align-items: center;
+}
+
+.historiaImagen {
+    aspect-ratio: 4/3;
+    border-radius: var(--radio-lg);
+    background: linear-gradient(135deg, var(--color-beige) 0%, var(--color-beige-dark) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 6rem;
+    box-shadow: var(--sombra-md);
+    position: relative;
+    overflow: hidden;
+}
+
+.histImgCaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(44, 44, 44, 0.5);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.75rem;
+    padding: 8px 16px;
+    text-align: center;
+}
+
+.historiaTexto {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-sm);
+}
+
+.historiaTexto .section-tag {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-arena);
+}
+
+.historiaTexto h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.historiaTexto p {
+    font-size: 0.95rem;
+    color: var(--color-texto-light);
+    line-height: 1.75;
+}
+
+/* Pasos */
+.pasosGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--espacio-md);
+    position: relative;
+}
+
+.paso {
+    text-align: center;
+    padding: var(--espacio-lg) var(--espacio-sm);
+    background: var(--color-blanco);
+    border-radius: var(--radio-lg);
+    border: 1px solid var(--color-beige);
+    position: relative;
+}
+
+.pasoNum {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--color-madera);
+    color: var(--color-yeso);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-titulo);
+    font-size: 1rem;
+    font-weight: 800;
+    margin: 0 auto var(--espacio-sm);
+}
+
+.paso h3 {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    color: var(--color-texto);
+}
+
+.paso p {
+    font-size: 0.82rem;
+    color: var(--color-texto-light);
+    line-height: 1.5;
+}
+
+/* Galería */
+.galeriaGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--espacio-sm);
+}
+
+.galeriaImagen {
+    aspect-ratio: 1;
+    border-radius: var(--radio-md);
+    background: linear-gradient(135deg, var(--color-beige) 0%, var(--color-beige-dark) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    overflow: hidden;
+    transition: transform var(--trans-media);
+    cursor: default;
+}
+
+.galeriaImagen:hover {
+    transform: scale(1.02);
+}
+
+/* Valores */
+.valoresGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--espacio-md);
+}
+
+.valorCard {
+    text-align: center;
+    padding: var(--espacio-xl) var(--espacio-md);
+    background: var(--color-blanco);
+    border-radius: var(--radio-lg);
+    border: 1px solid var(--color-beige);
+    transition: transform var(--trans-media), box-shadow var(--trans-media);
+}
+
+.valorCard:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--sombra-md);
+}
+
+.valorIcon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: var(--espacio-sm);
+}
+
+.valorCard h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.valorCard p {
+    font-size: 0.85rem;
+    color: var(--color-texto-light);
+    line-height: 1.55;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .historiaGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .pasosGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .valoresGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .pasosGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .galeriaGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
