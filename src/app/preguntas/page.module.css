@@ -1,0 +1,58 @@
+.main {
+    background-color: var(--color-yeso);
+}
+
+.faqHero {
+    background-color: var(--color-tierra);
+    color: var(--color-blanco);
+    padding: var(--espacio-2xl) 0;
+    text-align: center;
+    background-image: linear-gradient(rgba(125, 90, 60, 0.7), rgba(125, 90, 60, 0.7)), url('/images/faq-hero.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.title {
+    font-family: var(--font-titulo);
+    font-size: 3.5rem;
+    margin-bottom: var(--espacio-md);
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+.faqList {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    gap: var(--espacio-xl);
+}
+
+.faqItem h3 {
+    font-family: var(--font-titulo);
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: var(--color-tierra);
+}
+
+.faqItem p {
+    font-size: 1.1rem;
+    color: var(--color-texto-light);
+}
+
+.cta {
+    margin-top: var(--espacio-2xl);
+    text-align: center;
+    padding: var(--espacio-xl);
+    background: var(--color-crema);
+    border-radius: var(--radio-md);
+}
+
+.cta p {
+    margin-bottom: var(--espacio-md);
+    font-weight: 600;
+}

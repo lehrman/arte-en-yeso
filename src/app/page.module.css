@@ -18,49 +18,35 @@
     background-color: var(--color-yeso);
 }
 
+.heroCont.main {
+    overflow-x: hidden;
+}
+
+/* =========== HERO TALLER =========== */
 .heroContent {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--espacio-xl);
-    align-items: center;
-    padding-top: var(--espacio-xl);
-    padding-bottom: var(--espacio-xl);
-}
-
-.heroLeft {
-    display: flex;
-    flex-direction: column;
-    gap: var(--espacio-md);
-}
-
-.heroBadge {
-    align-self: flex-start;
+    max-width: 800px;
 }
 
 .heroTitle {
-    font-size: clamp(2.8rem, 6vw, 4.5rem);
-    font-weight: 800;
-    color: var(--color-texto);
-    line-height: 1.05;
-}
-
-.heroTitle em {
-    font-style: normal;
-    color: var(--color-madera);
-    position: relative;
+    font-family: var(--font-titulo);
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: var(--espacio-md);
+    font-weight: 700;
 }
 
 .heroSubtitle {
-    font-size: 1.15rem;
-    color: var(--color-texto-light);
-    line-height: 1.7;
-    max-width: 480px;
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+    margin-bottom: var(--espacio-lg);
+    opacity: 0.9;
+    max-width: 600px;
+    margin-inline: auto;
 }
 
 .heroCtas {
     display: flex;
-    gap: var(--espacio-sm);
+    gap: var(--espacio-md);
+    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -196,16 +182,75 @@
     line-height: 1.55;
 }
 
-/* Productos grid */
-.productsGrid {
+/* =========== ESENCIA GRID =========== */
+.esenciaGrid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espacio-xl);
+    align-items: center;
+}
+
+.esenciaInfo h2 {
+    font-family: var(--font-titulo);
+    font-size: 2.5rem;
+    margin-bottom: var(--espacio-md);
+}
+
+.esenciaInfo p {
+    font-size: 1.1rem;
+    color: var(--color-texto-light);
+    margin-bottom: var(--espacio-md);
+}
+
+.textLink {
+    color: var(--color-tierra);
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--trans-media);
+}
+
+.textLink:hover {
+    gap: 0.8rem;
+}
+
+.esenciaCards {
+    display: flex;
+    flex-direction: column;
     gap: var(--espacio-md);
 }
 
+.miniCard {
+    background: var(--color-blanco);
+    padding: var(--espacio-md);
+    border-radius: var(--radio-md);
+    box-shadow: var(--sombra-sm);
+    border-left: 4px solid var(--color-arena);
+}
+
+.miniCard h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.miniCard p {
+    font-size: 0.95rem;
+    color: var(--color-texto-light);
+}
+
+/* Productos grid */
+.productsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--espacio-lg);
+    margin-top: var(--espacio-lg);
+}
+
 .verMasWrap {
-    text-align: center;
     margin-top: var(--espacio-xl);
+    text-align: center;
 }
 
 /* Ocasiones */

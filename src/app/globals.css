@@ -4,83 +4,74 @@
    VARIABLES DE DISEÑO
    ===================== */
 :root {
-  /* Paleta Artesanal */
-  --color-yeso:       #F9F6F0;
-  --color-beige:      #EDE8E1;
-  --color-beige-dark: #D8D0C3;
-  --color-arena:      #C9A87C;
-  --color-madera:     #7D5A3C;
-  --color-madera-dark:#5C3D22;
-  --color-texto:      #2C2C2C;
-  --color-texto-light:#6B6257;
-  --color-blanco:     #FFFFFF;
-  --color-whatsapp:   #25D366;
+  /* Paleta Taller Acogedor (Rústica/Orgánica) */
+  --color-yeso: #F9F7F2;
+  /* Blanco roto con tinte cálido */
+  --color-crema: #F2EBE1;
+  --color-beige: #E6DCD0;
+  --color-arena: #D1BFA7;
+  --color-arcilla: #A67C52;
+  /* Antes madera */
+  --color-tierra: #7D5A3C;
+  --color-lino: #B8A28C;
+  --color-texto: #332D28;
+  --color-texto-light: #7A6E63;
+  --color-blanco: #FFFFFF;
+  --color-whatsapp: #25D366;
   --color-whatsapp-dark: #1DA851;
 
-  /* Categorías */
-  --color-religioso:  #7D5A3C;
-  --color-souvenirs:  #C9A87C;
-  --color-kits:       #8B9E6A;
-  --color-decoracion: #8C7A6B;
+  /* Categorías Actualizadas */
+  --color-religioso: #7D5A3C;
+  --color-decoracion: #A67C52;
+  --color-macetas: #8B9E6A;
+  --color-herramientas: #6B5748;
 
   /* Tipografía */
-  --font-titulo:      'Outfit', sans-serif;
-  --font-cuerpo:      'Inter', sans-serif;
+  --font-titulo: 'Outfit', sans-serif;
+  --font-cuerpo: 'Inter', sans-serif;
 
-  /* Espaciado */
-  --espacio-xs:  0.5rem;
-  --espacio-sm:  1rem;
-  --espacio-md:  1.5rem;
-  --espacio-lg:  2.5rem;
-  --espacio-xl:  4rem;
+  /* Espaciado y Bordes */
+  --espacio-xs: 0.5rem;
+  --espacio-sm: 1rem;
+  --espacio-md: 1.5rem;
+  --espacio-lg: 2.5rem;
+  --espacio-xl: 4rem;
   --espacio-2xl: 6rem;
 
-  /* Bordes */
-  --radio-sm:    6px;
-  --radio-md:    12px;
-  --radio-lg:    20px;
-  --radio-full:  9999px;
+  --radio-sm: 4px;
+  /* Bordes un poco más rectos/artesanales */
+  --radio-md: 8px;
+  --radio-lg: 16px;
+  --radio-full: 9999px;
 
-  /* Sombras */
-  --sombra-sm:  0 2px 8px rgba(125,90,60,0.08);
-  --sombra-md:  0 4px 20px rgba(125,90,60,0.12);
-  --sombra-lg:  0 8px 40px rgba(125,90,60,0.16);
-  --sombra-hover: 0 12px 50px rgba(125,90,60,0.22);
+  /* Sombras más sutiles y orgánicas */
+  --sombra-sm: 0 2px 10px rgba(51, 45, 40, 0.05);
+  --sombra-md: 0 4px 20px rgba(51, 45, 40, 0.08);
+  --sombra-lg: 0 10px 40px rgba(51, 45, 40, 0.12);
 
-  /* Transiciones */
-  --trans-rapida: 0.2s ease;
-  --trans-media:  0.3s ease;
-  --trans-lenta:  0.5s ease;
-
-  /* Ancho máximo */
+  --trans-media: 0.3s ease;
   --max-width: 1280px;
 }
 
 /* =====================
    RESET Y BASE
    ===================== */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
-}
-
 body {
   font-family: var(--font-cuerpo);
   background-color: var(--color-yeso);
+  background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+  /* Textura sutil de papel */
   color: var(--color-texto);
   line-height: 1.6;
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-titulo);
   line-height: 1.2;
   font-weight: 700;
@@ -102,7 +93,8 @@ button {
   font-family: var(--font-cuerpo);
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -123,7 +115,9 @@ ul, ol {
   padding: var(--espacio-xl) 0;
 }
 
-.text-center { text-align: center; }
+.text-center {
+  text-align: center;
+}
 
 .badge {
   display: inline-block;
@@ -135,12 +129,35 @@ ul, ol {
   text-transform: uppercase;
 }
 
-.badge-religioso { background: rgba(125,90,60,0.15); color: var(--color-madera); }
-.badge-souvenirs { background: rgba(201,168,124,0.2); color: #8B6A3E; }
-.badge-kits      { background: rgba(139,158,106,0.15); color: #5C7040; }
-.badge-decoracion { background: rgba(140,122,107,0.15); color: #6B5748; }
-.badge-todos     { background: var(--color-beige); color: var(--color-texto-light); }
-.badge-acento    { background: var(--color-madera); color: var(--color-blanco); }
+.badge-religioso {
+  background: rgba(125, 90, 60, 0.15);
+  color: var(--color-madera);
+}
+
+.badge-souvenirs {
+  background: rgba(201, 168, 124, 0.2);
+  color: #8B6A3E;
+}
+
+.badge-kits {
+  background: rgba(139, 158, 106, 0.15);
+  color: #5C7040;
+}
+
+.badge-decoracion {
+  background: rgba(140, 122, 107, 0.15);
+  color: #6B5748;
+}
+
+.badge-todos {
+  background: var(--color-beige);
+  color: var(--color-texto-light);
+}
+
+.badge-acento {
+  background: var(--color-madera);
+  color: var(--color-blanco);
+}
 
 /* Botones */
 .btn {
@@ -164,6 +181,7 @@ ul, ol {
   color: var(--color-blanco);
   border-color: var(--color-madera);
 }
+
 .btn-primary:hover {
   background: var(--color-madera-dark);
   border-color: var(--color-madera-dark);
@@ -176,6 +194,7 @@ ul, ol {
   color: var(--color-madera);
   border-color: var(--color-madera);
 }
+
 .btn-outline:hover {
   background: var(--color-madera);
   color: var(--color-blanco);
@@ -187,11 +206,12 @@ ul, ol {
   color: var(--color-blanco);
   border-color: var(--color-whatsapp);
 }
+
 .btn-whatsapp:hover {
   background: var(--color-whatsapp-dark);
   border-color: var(--color-whatsapp-dark);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(37,211,102,0.3);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
 }
 
 .btn-lg {
@@ -252,15 +272,15 @@ ul, ol {
 /* Textura de fondo */
 .bg-textura {
   background-color: var(--color-beige);
-  background-image: 
-    radial-gradient(circle at 25% 25%, rgba(201,168,124,0.06) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(125,90,60,0.05) 0%, transparent 50%);
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(201, 168, 124, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(125, 90, 60, 0.05) 0%, transparent 50%);
 }
 
 .bg-oscuro {
   background-color: var(--color-madera);
   background-image:
-    radial-gradient(circle at 20% 50%, rgba(201,168,124,0.12) 0%, transparent 60%);
+    radial-gradient(circle at 20% 50%, rgba(201, 168, 124, 0.12) 0%, transparent 60%);
 }
 
 /* Form base */
@@ -295,7 +315,7 @@ ul, ol {
 .form-grupo textarea:focus,
 .form-grupo select:focus {
   border-color: var(--color-madera);
-  box-shadow: 0 0 0 3px rgba(125,90,60,0.1);
+  box-shadow: 0 0 0 3px rgba(125, 90, 60, 0.1);
 }
 
 .form-grupo textarea {
@@ -312,49 +332,99 @@ ul, ol {
    ANIMACIONES
    ===================== */
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeInLeft {
-  from { opacity: 0; transform: translateX(-24px); }
-  to   { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes fadeInRight {
-  from { opacity: 0; transform: translateX(24px); }
-  to   { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50%       { transform: scale(1.06); }
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.06);
+  }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-8px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
-.animate-fadeup  { animation: fadeInUp 0.7s ease both; }
-.animate-fadein  { animation: fadeInUp 1s ease both; }
+.animate-fadeup {
+  animation: fadeInUp 0.7s ease both;
+}
+
+.animate-fadein {
+  animation: fadeInUp 1s ease both;
+}
 
 /* =====================
    RESPONSIVE
    ===================== */
 @media (max-width: 1024px) {
-  .container { padding: 0 var(--espacio-md); }
+  .container {
+    padding: 0 var(--espacio-md);
+  }
 }
 
 @media (max-width: 768px) {
   :root {
-    --espacio-xl:  2.5rem;
+    --espacio-xl: 2.5rem;
     --espacio-2xl: 4rem;
   }
-  .container { padding: 0 var(--espacio-sm); }
-  .btn { padding: 11px 22px; }
+
+  .container {
+    padding: 0 var(--espacio-sm);
+  }
+
+  .btn {
+    padding: 11px 22px;
+  }
 }
 
 @media (max-width: 480px) {
-  :root { --espacio-2xl: 3rem; }
+  :root {
+    --espacio-2xl: 3rem;
+  }
 }
