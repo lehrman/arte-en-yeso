@@ -6,6 +6,7 @@ const CATEGORY_LABELS = {
     souvenirs: 'Souvenirs',
     kits: 'Kits DIY',
     decoracion: 'Decoración',
+    hogar: 'Hogar',
 };
 
 const CATEGORY_ICONS = {
@@ -13,6 +14,7 @@ const CATEGORY_ICONS = {
     souvenirs: '🎁',
     kits: '🎨',
     decoracion: '🏡',
+    hogar: '🏠',
 };
 
 export default function ProductCard({ product }) {
@@ -24,32 +26,42 @@ export default function ProductCard({ product }) {
     const stockLabel = product.stock === 'disponible' ? 'En Stock' : 'Últimas unidades';
     const stockClass = product.stock === 'disponible' ? styles.stockOk : styles.stockWarn;
 
+    const price = typeof product.price === 'number' ? product.price : parseFloat(product.price) || 0;
+    const slug = product.slug || String(product.id);
+    const hasImage = product.images?.[0];
+
     return (
         <article className={styles.card}>
             {/* Imagen */}
-            <Link href={`/catalogo/${product.slug}`} className={styles.imageWrap}>
-                <div className={styles.imagePlaceholder}>
-                    <span className={styles.catEmoji}>{CATEGORY_ICONS[product.category] || '✦'}</span>
-                </div>
+            <Link href={`/catalogo/${slug}`} className={styles.imageWrap}>
+                {hasImage ? (
+                    <div className={styles.imagePlaceholder} style={{ padding: 0 }}>
+                        <img src={hasImage} alt={product.name} className={styles.productImage} />
+                    </div>
+                ) : (
+                    <div className={styles.imagePlaceholder}>
+                        <span className={styles.catEmoji}>{CATEGORY_ICONS[product.category] || '✦'}</span>
+                    </div>
+                )}
                 <span className={`badge badge-${product.category} ${styles.catBadge}`}>
-                    {CATEGORY_LABELS[product.category]}
+                    {CATEGORY_LABELS[product.category] || product.category}
                 </span>
                 <span className={`${styles.stock} ${stockClass}`}>{stockLabel}</span>
             </Link>
 
             {/* Contenido */}
             <div className={styles.body}>
-                <Link href={`/catalogo/${product.slug}`}>
+                <Link href={`/catalogo/${slug}`}>
                     <h3 className={styles.name}>{product.name}</h3>
                 </Link>
-                <p className={styles.subtitle}>{product.subtitle}</p>
+                <p className={styles.subtitle}>{product.subtitle || product.description?.slice(0, 60)}</p>
 
                 <div className={styles.footer}>
                     <span className={styles.price}>
-                        ${product.price.toLocaleString('es-AR')}
+                        ${price.toLocaleString('es-AR')}
                     </span>
                     <div className={styles.actions}>
-                        <Link href={`/catalogo/${product.slug}`} className="btn btn-outline btn-sm">
+                        <Link href={`/catalogo/${slug}`} className="btn btn-outline btn-sm">
                             Ver más
                         </Link>
                         <a href={waUrl} target="_blank" rel="noopener noreferrer" className={styles.waBtn} aria-label="WhatsApp">

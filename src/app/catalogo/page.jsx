@@ -9,15 +9,23 @@ import styles from './page.module.css';
 
 export default function CatalogoPage() {
     const [activeCategory, setActiveCategory] = useState('todos');
+    const [allProducts, setAllProducts] = useState(products);
     const [filtered, setFiltered] = useState(products);
 
     useEffect(() => {
+        const customItems = JSON.parse(localStorage.getItem('abu_custom_products') || '[]');
+        const merged = [...products, ...customItems];
+        setAllProducts(merged);
+        setFiltered(merged);
+    }, []);
+
+    useEffect(() => {
         if (activeCategory === 'todos') {
-            setFiltered(products);
+            setFiltered(allProducts);
         } else {
-            setFiltered(products.filter((p) => p.category === activeCategory));
+            setFiltered(allProducts.filter((p) => p.category === activeCategory));
         }
-    }, [activeCategory]);
+    }, [activeCategory, allProducts]);
 
     return (
         <>
@@ -44,7 +52,7 @@ export default function CatalogoPage() {
                                 {getCategoryIcon(cat.id)} {cat.label}
                                 {activeCategory === cat.id && (
                                     <span className={styles.countBadge}>
-                                        {cat.id === 'todos' ? products.length : products.filter(p => p.category === cat.id).length}
+                                        {cat.id === 'todos' ? allProducts.length : allProducts.filter(p => p.category === cat.id).length}
                                     </span>
                                 )}
                             </button>

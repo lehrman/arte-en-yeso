@@ -1,9 +1,8 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
-import ProductCard from '@/components/ProductCard';
+import FeaturedProducts from '@/components/FeaturedProducts';
 import Link from 'next/link';
-import { products } from '@/data/data';
 import styles from './page.module.css';
 
 const WA_NUMBER = '5491100000000';
@@ -11,7 +10,6 @@ const WA_MSG = encodeURIComponent('Hola! Me conmovió la historia de Abu Creacio
 const WA_URL = `https://wa.me/${WA_NUMBER}?text=${WA_MSG}`;
 
 export default function Home() {
-    const featured = products.slice(0, 4);
 
     return (
         <>
@@ -70,11 +68,7 @@ export default function Home() {
                             <p className={styles.pSubtitle}>Pedacitos de hogar que esperan por vos.</p>
                             <div className={styles.separadorNostalgico}>✦</div>
                         </div>
-                        <div className={styles.productsGrid}>
-                            {featured.map((p) => (
-                                <ProductCard key={p.id} product={p} />
-                            ))}
-                        </div>
+                        <FeaturedProducts gridClassName={styles.productsGrid} />
                         <div className={styles.verMasWrap}>
                             <Link href="/catalogo" className="btn btn-secondary">Ver toda la colección</Link>
                         </div>
