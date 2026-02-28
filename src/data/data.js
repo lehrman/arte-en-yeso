@@ -17,7 +17,7 @@ export const products = [
         id: 2,
         name: "Maceta de los Domingos",
         slug: "maceta-domingos",
-        category: "hogar",
+        category: "decoracion",
         price: 3400,
         stock: "Pocas unidades",
         description: "Inspirada en las macetas que la abu cuidaba mientras la salsa se cocía a fuego lento. Textura orgánica que se siente como un abrazo.",

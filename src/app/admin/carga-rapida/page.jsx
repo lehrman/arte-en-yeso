@@ -20,12 +20,34 @@ export default function CargaRapida() {
 
     const handleFoto = (e) => {
         const f = e.target.files?.[0];
-        if (f) setFoto(URL.createObjectURL(f));
+        if (f) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setFoto(reader.result);
+            };
+            reader.readAsDataURL(f);
+        }
         setStep(2);
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        const newProduct = {
+            id: Date.now(),
+            name: nombre,
+            price: parseFloat(precio),
+            category: 'decoracion', // Default para carga rápida
+            stock: 'disponible',
+            description: 'Producto cargado mediante carga rápida.',
+            images: [foto],
+            customizable: false,
+            slug: nombre.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '') + '-' + Date.now()
+        };
+
+        const existing = JSON.parse(localStorage.getItem('abu_custom_products') || '[]');
+        localStorage.setItem('abu_custom_products', JSON.stringify([...existing, newProduct]));
+
         setGuardado(true);
         setTimeout(() => router.push('/admin/productos'), 2000);
     };

@@ -14,12 +14,25 @@ export default function AdminProductos() {
         if (typeof window !== 'undefined' && !localStorage.getItem('admin_auth')) {
             router.push('/admin/login');
         }
-        setItems(products);
+
+        const staticItems = products;
+        const customItems = JSON.parse(localStorage.getItem('abu_custom_products') || '[]');
+        setItems([...staticItems, ...customItems]);
     }, []);
 
     const filtrados = items.filter(p =>
         p.name?.toLowerCase().includes(busqueda.toLowerCase())
     );
+
+    const handleDelete = (id) => {
+        if (confirm('¿Estás seguro de que querés eliminar este producto?')) {
+            const customItems = JSON.parse(localStorage.getItem('abu_custom_products') || '[]');
+            const newCustom = customItems.filter(p => String(p.id) !== String(id));
+            localStorage.setItem('abu_custom_products', JSON.stringify(newCustom));
+
+            setItems([...products, ...newCustom]);
+        }
+    };
 
     const handleLogout = () => {
         localStorage.removeItem('admin_auth');
@@ -95,7 +108,12 @@ export default function AdminProductos() {
                                 <tr key={p.id} className={styles.tableRow}>
                                     <td>
                                         <div className={styles.productCell}>
-                                            <div className={styles.productThumb}>{p.name?.charAt(0) ?? '?'}</div>
+                                            <div className={styles.productThumb}>
+                                                {p.images?.[0]
+                                                    ? <img src={p.images[0]} alt={p.name} className={styles.thumbImage} />
+                                                    : (p.name?.charAt(0) ?? '?')
+                                                }
+                                            </div>
                                             <span className={styles.productName}>{p.name}</span>
                                         </div>
                                     </td>
@@ -107,7 +125,13 @@ export default function AdminProductos() {
                                     <td>
                                         <div className={styles.actionBtns}>
                                             <Link href={`/admin/editar/${p.id}`} className={styles.btnEdit}>Editar</Link>
-                                            <button className={styles.btnDelete}>Eliminar</button>
+                                            <button
+                                                onClick={() => handleDelete(p.id)}
+                                                className={styles.btnDelete}
+                                                disabled={!String(p.id).includes('.') && String(p.id).length <= 5}
+                                            >
+                                                Eliminar
+                                            </button>
                                         </div>
                                     </td>
                                 </tr>

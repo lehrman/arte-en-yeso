@@ -263,6 +263,13 @@
     font-weight: 700;
     color: #7b563d;
     flex-shrink: 0;
+    overflow: hidden;
+}
+
+.thumbImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .productName {
