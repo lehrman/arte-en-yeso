@@ -34,7 +34,7 @@ const testimonios = [
 ];
 
 export default function MayoristasPage() {
-    const WA_NUMBER = 'https://wa.me/5491162996903?text=' + encodeURIComponent('Hola! Quiero consultar sobre pedidos mayoristas o para eventos. ¿Pueden darme información?');
+    const WA_URL = 'https://wa.me/5491162996903?text=' + encodeURIComponent('Hola! Quiero consultar sobre pedidos mayoristas o para eventos. ¿Pueden darme información?');
 
     return (
         <>

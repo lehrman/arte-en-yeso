@@ -4,6 +4,8 @@ import WhatsAppFloat from '@/components/WhatsAppFloat';
 import styles from './page.module.css';
 import Link from 'next/link';
 
+const WA_NUMBER = '5491162996903';
+
 export default function Talleres() {
     return (
         <>

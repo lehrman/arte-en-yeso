@@ -3,6 +3,8 @@ import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
 import styles from './page.module.css';
 
+const WA_NUMBER = '5491162996903';
+
 export default function FAQ() {
     return (
         <>
