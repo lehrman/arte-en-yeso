@@ -68,13 +68,13 @@ export default function Footer() {
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
                             </svg>
-                            San Miguel, Provincia de Buenos Aires, Argentina
+                            {ADDRESS}
                         </li>
                         <li>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                 <rect x="2" y="3" width="20" height="14" rx="2" ry="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" />
                             </svg>
-                            Envíos a zona norte GBA
+                            Envíos a todo el país
                         </li>
                         <li>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -87,8 +87,8 @@ export default function Footer() {
             </div>
 
             <div className={`container ${styles.bottom}`}>
-                <p>© 2025 Arte en Yeso San Miguel. Todos los derechos reservados. Hecho con ♥ en Argentina.</p>
-                <p>Figuras artesanales en yeso · San Miguel · Zona norte GBA</p>
+                <p>© 2025 ABU CREACIONES. Todos los derechos reservados. Hecho con ♥ en Argentina.</p>
+                <p>Figuras artesanales en yeso · San Miguel · Buenos Aires</p>
             </div>
         </footer>
     );
